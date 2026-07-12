@@ -5,7 +5,7 @@ from src.validaciones import validar_nombre, validar_telefono
 
 @pytest.mark.parametrize(
     "nombre",
-    ["Juan", "Maria Perez", "123", "Nuñez", "José Andrés"],
+    ["Juan", "Maria Perez", "Juan Urgiles", "Nuñez", "José Andrés"],
 )
 def test_nombres_validos(nombre):
     assert validar_nombre(nombre) is True
