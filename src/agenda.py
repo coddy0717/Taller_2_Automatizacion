@@ -32,7 +32,7 @@ class Agenda:
                 "El telefono debe tener exactamente 10 digitos."
             )
 
-        nombre = nombre.strip()
+        nombre = nombre.strip() 
         telefono = str(telefono).strip()
         clave = nombre.lower()
 
@@ -67,6 +67,10 @@ class Agenda:
             for clave, contacto in self._contactos.items()
             if texto in clave
         ]
+
+    def listar_contactos(self):
+        """Devuelve la lista de todos los contactos registrados."""
+        return list(self._contactos.values())
 
     def total_contactos(self):
         """Cantidad de contactos registrados."""

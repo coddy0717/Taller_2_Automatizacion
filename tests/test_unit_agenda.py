@@ -80,3 +80,16 @@ def test_coincidencia_vacia(agenda):
 
 def test_coincidencia_sin_resultados(agenda):
     assert agenda.buscar_por_coincidencia("xyz") == []
+
+
+def test_listar_contactos(agenda):
+    contactos = agenda.listar_contactos()
+    assert len(contactos) == 2
+    nombres = [c["nombre"] for c in contactos]
+    assert "Juan Perez" in nombres
+    assert "Maria Lopez" in nombres
+
+
+def test_listar_contactos_vacia():
+    agenda = Agenda()
+    assert agenda.listar_contactos() == []
